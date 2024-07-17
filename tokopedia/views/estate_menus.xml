@@ -1,8 +1,19 @@
 <?xml version="1.0"?>
 <odoo>
+    <menuitem id="tokopedia_menu_root" name="Tokopedia Management">
+        <menuitem id="tokopedia_menu_sales" name="Sales">
+            <menuitem id="tokopedia_menu_sales_products" name="Inventory" action="tokopedia_products_action"/>
+            <menuitem id="tokopedia_menu_sales_orders" name="Orders" action="tokopedia_orders_action"/>
+        </menuitem>
+    </menuitem>
+    
     <menuitem id="estate_menu_root" name="Real Estate">
         <menuitem id="estate_menu_advertisements" name="Advertisements">
             <menuitem id="option_menu_advertisements_properties" name="Properties" action="estate_property_action"></menuitem>
+        </menuitem>
+
+        <menuitem id="estate_menu_settings" name="Settings">
+            <menuitem id="option_menu_settings_property_types" name="Property Types" action="estate_property_type_action"></menuitem>
         </menuitem>
     </menuitem>
 </odoo>

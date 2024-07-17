@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 tokopedia.access_estate_property,access_estate_property,tokopedia.model_estate_property,base.group_user,1,1,1,1
+tokopedia.access_estate_property_type,access_estate_property_type,tokopedia.model_estate_property_type,base.group_user,1,1,1,1
+tokopedia.access_tokopedia_product,access_tokopedia_product,tokopedia.model_tokopedia_product,base.group_user,1,1,1,1
+tokopedia.access_tokopedia_order,access_tokopedia_order,tokopedia.model_tokopedia_order,base.group_user,1,1,1,1
