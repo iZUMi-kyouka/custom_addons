@@ -4,6 +4,7 @@
         <menuitem id="tokopedia_menu_sales" name="Sales">
             <menuitem id="tokopedia_menu_sales_products" name="Inventory" action="tokopedia_products_action"/>
             <menuitem id="tokopedia_menu_sales_orders" name="Orders" action="tokopedia_orders_action"/>
+            <menuitem id="tokopedia_menu_sales_map" name="Map" action="tokopedia_map_action"/>
         </menuitem>
     </menuitem>
     

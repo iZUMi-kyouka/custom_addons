@@ -24,6 +24,49 @@
         <field name="view_mode">tree,form,search</field>
     </record>
 
+    <record id="tokopedia_map_action" model="ir.actions.act_window">
+        <field name="name">Map</field>
+        <field name="res_model">tokopedia.map</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <record id="tokopedia_map_view_list" model="ir.ui.view">
+        <field name="name">tokopedia.map.tree</field>
+        <field name="model">tokopedia.map</field>
+        <field name="arch" type="xml">
+            <tree string="Map">
+                <field name="name"/>
+                <field name="product_id"/>        
+            </tree>
+        </field>
+    </record>
+
+    <record id="tokopedia_map_view_form" model="ir.ui.view">
+        <field name="name">tokopedia.map.form</field>
+        <field name="model">tokopedia.map</field>
+        <field name="arch" type="xml">
+            <form string="Map">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="product_id"/>     
+                    </group>  
+                </sheet> 
+            </form>
+        </field>
+    </record>
+
+    <record id="tokopedia_map_view_search" model="ir.ui.view">
+        <field name="name">tokopedia.map.search</field>
+        <field name="model">tokopedia.map</field>
+        <field name="arch" type="xml">
+            <search string="Map">
+                <field name="name"/>
+                <field name="product_id"/>       
+            </search>
+        </field>
+    </record>
+
     <!-- Tokopedia Product List View -->
     <record id="tokopedia_products_view_list" model="ir.ui.view">
         <field name="name">tokopedia.product.tree</field>
@@ -45,7 +88,7 @@
         <field name="arch" type="xml">
             <tree string="Orders">
                 <field name="invoice_no"/>
-                <field name="sku_id"/>
+                <field name="tokopedia_id"/>
                 <field name="quantity"/>
                 <field name="total_amount"/>
                 <field name="payment_date"/>

@@ -1,8 +1,10 @@
 {
-    'name': 'Tokopedia Sales Integration',
-    'version': '0.1.1',
+    'name': 'Tokopedia Integration v1',
+    'version': '0.1.2',
     'depends': [
-        'base'
+        'base',
+        'product',
+        'stock'
     ],
     'data': [
         'security/ir.model.access.csv',
