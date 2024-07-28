@@ -1,6 +1,6 @@
 {
-    'name': 'Tokopedia Integration v1',
-    'version': '0.1.2',
+    'name': 'Tokopedia Integration',
+    'version': '0.1.3',
     'depends': [
         'base',
         'product',
@@ -8,8 +8,8 @@
     ],
     'data': [
         'security/ir.model.access.csv',
-        'views/estate_property_views.xml',
-        'views/estate_menus.xml'
+        'views/tokopedia_integration_views.xml',
+        'views/tokopedia_integration_menus.xml'
     ],
     'application': True
 }

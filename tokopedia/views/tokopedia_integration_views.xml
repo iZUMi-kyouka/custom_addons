@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <odoo>
-    <record id="estate_property_action" model="ir.actions.act_window">
+    <!-- <record id="estate_property_action" model="ir.actions.act_window">
         <field name="name">Properties</field>
         <field name="res_model">estate.property</field>
         <field name="view_mode">tree,form,search</field>
@@ -10,7 +10,7 @@
         <field name="name">Property Types</field>
         <field name="res_model">estate.property.type</field>
         <field name="view_mode">tree,form</field>
-    </record>
+    </record> -->
 
     <record id="tokopedia_products_action" model="ir.actions.act_window">
         <field name="name">Inventory</field>
@@ -37,6 +37,7 @@
             <tree string="Map">
                 <field name="name"/>
                 <field name="product_id"/>        
+                <field name="tokopedia_price"/>
             </tree>
         </field>
     </record>
@@ -50,6 +51,7 @@
                     <group>
                         <field name="name"/>
                         <field name="product_id"/>     
+                        <field name="tokopedia_price"/> 
                     </group>  
                 </sheet> 
             </form>
@@ -62,7 +64,8 @@
         <field name="arch" type="xml">
             <search string="Map">
                 <field name="name"/>
-                <field name="product_id"/>       
+                <field name="product_id"/>      
+                <field name="tokopedia_price"/> 
             </search>
         </field>
     </record>
@@ -88,6 +91,7 @@
         <field name="arch" type="xml">
             <tree string="Orders">
                 <field name="invoice_no"/>
+                <field name="write_date"/>
                 <field name="tokopedia_id"/>
                 <field name="quantity"/>
                 <field name="total_amount"/>
@@ -100,7 +104,7 @@
     </record>
 
     <!-- Estate Property List View -->
-    <record id="estate_property_view_tree" model="ir.ui.view">
+    <!-- <record id="estate_property_view_tree" model="ir.ui.view">
         <field name="name">estate.property.tree</field>
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
@@ -115,10 +119,10 @@
                 <field name="date_availability"/>            
             </tree>
         </field>
-    </record>
+    </record> -->
 
     <!-- Estate Property Search View -->
-    <record id="estate_property_search_view" model="ir.ui.view">
+    <!-- <record id="estate_property_search_view" model="ir.ui.view">
         <field name="name">estate.property.search</field>
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
@@ -136,11 +140,11 @@
                 </group>
             </search>
         </field>
-    </record>
+    </record> -->
 
 
     <!-- Estate Property Form View -->
-    <record id="estate_property_view_form" model="ir.ui.view">
+    <!-- <record id="estate_property_view_form" model="ir.ui.view">
         <field name="name">estate.property.form</field>
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
@@ -181,5 +185,5 @@
                 </sheet>
             </form>
         </field>
-    </record>
+    </record> -->
 </odoo>
