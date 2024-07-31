@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem id="shopee_menu_root" name="Shopee Management">
+        <menuitem id="shopee_menu_sales" name="Sales">
+            <menuitem id="shopee_menu_sales_import_wizard" name="Import Orders (Custom)" action="shopee_import_wizard_action"/>
+            <menuitem id="shopee_menu_sales_orders" name="Orders" action="shopee_orders_action"/>
+            <menuitem id="shopee_menu_sales_map" name="SKU Map" action="shopee_map_action"/>
+            <!-- <menuitem id="shopee_menu_sales_test" name="Test" action="shopee_test_action"/> -->
+        </menuitem>
+    </menuitem>
+</odoo>

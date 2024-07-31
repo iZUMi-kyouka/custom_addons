@@ -1,2 +1,2 @@
-from . import estate_property_type, estate_property, tokopedia_products, tokopedia_orders, tokopedia_map
+from . import tokopedia_orders, tokopedia_map, tokopedia_import_wizard
 from ....addons import product

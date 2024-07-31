@@ -1,23 +1,5 @@
 <?xml version="1.0"?>
 <odoo>
-    <!-- <record id="estate_property_action" model="ir.actions.act_window">
-        <field name="name">Properties</field>
-        <field name="res_model">estate.property</field>
-        <field name="view_mode">tree,form,search</field>
-    </record>
-
-    <record id="estate_property_type_action" model="ir.actions.act_window">
-        <field name="name">Property Types</field>
-        <field name="res_model">estate.property.type</field>
-        <field name="view_mode">tree,form</field>
-    </record> -->
-
-    <record id="tokopedia_products_action" model="ir.actions.act_window">
-        <field name="name">Inventory</field>
-        <field name="res_model">tokopedia.product</field>
-        <field name="view_mode">tree,form,search</field>
-    </record>
-
     <record id="tokopedia_orders_action" model="ir.actions.act_window">
         <field name="name">Orders</field>
         <field name="res_model">tokopedia.order</field>
@@ -29,6 +11,33 @@
         <field name="res_model">tokopedia.map</field>
         <field name="view_mode">tree,form,search</field>
     </record>
+
+    <record id="tokopedia_import_wizard_view_form" model="ir.ui.view">
+        <field name="name">tokopedia.import.wizard.form</field>
+        <field name="model">tokopedia.import.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import Tokopedia Orders">
+                <sheet>
+                    <group>
+                        <field name="file_data" widget='binary' filename="file_name" options="{'accepted_file_extensions': '.xlsx'}"/>
+                    </group>
+                    <footer>
+                        <button string="Import" type="object" name="import_orders" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="tokopedia_import_wizard_action" model="ir.actions.act_window">
+        <field name="name">Import</field>
+        <field name="res_model">tokopedia.import.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="tokopedia_import_wizard_view_form"/>
+        <field name="target">new</field>
+    </record>
+
 
     <record id="tokopedia_map_view_list" model="ir.ui.view">
         <field name="name">tokopedia.map.tree</field>
@@ -70,120 +79,17 @@
         </field>
     </record>
 
-    <!-- Tokopedia Product List View -->
-    <record id="tokopedia_products_view_list" model="ir.ui.view">
-        <field name="name">tokopedia.product.tree</field>
-        <field name="model">tokopedia.product</field>
-        <field name="arch" type="xml">
-            <tree string="Inventory">
-                <field name="name"/>
-                <field name="product_name"/>
-                <field name="stock"/>          
-            </tree>
-        </field>
-
-     </record>
-
     <!-- Tokopedia Order List View -->
     <record id="tokopedia_orders_view_list" model="ir.ui.view">
         <field name="name">tokopedia.order.tree</field>
         <field name="model">tokopedia.order</field>
         <field name="arch" type="xml">
             <tree string="Orders">
-                <field name="invoice_no"/>
-                <field name="write_date"/>
+                <field name="name"/>
                 <field name="tokopedia_id"/>
                 <field name="quantity"/>
                 <field name="total_amount"/>
-                <field name="payment_date"/>
-                <field name="delivery_date"/>
-                <field name="tracking_id"/>          
-                <field name="last_status"/>
             </tree>
         </field>
     </record>
-
-    <!-- Estate Property List View -->
-    <!-- <record id="estate_property_view_tree" model="ir.ui.view">
-        <field name="name">estate.property.tree</field>
-        <field name="model">estate.property</field>
-        <field name="arch" type="xml">
-            <tree string="Properties">
-                <field name="name"/>
-                <field name="property_type_id"/>
-                <field name="postcode"/>
-                <field name="bedrooms"/>
-                <field name="living_area"/>
-                <field name="expected_price"/>
-                <field name="selling_price"/>
-                <field name="date_availability"/>            
-            </tree>
-        </field>
-    </record> -->
-
-    <!-- Estate Property Search View -->
-    <!-- <record id="estate_property_search_view" model="ir.ui.view">
-        <field name="name">estate.property.search</field>
-        <field name="model">estate.property</field>
-        <field name="arch" type="xml">
-            <search string="Properties">
-                <field name="name"/>
-                <field name="postcode"/>
-                <field name="expected_price"/>
-                <field name="facades"/>
-                <field name="bedrooms"/>
-                <field name="living_area"/>
-                <separator/>
-                <filter string="Available" name="available" domain="[('active', '=', True)]"/>
-                <group expand="1" string="Group By">
-                    <filter string="Postcode" name="postcode" context="{'group_by':'postcode', 'residual_visible': True}"/>
-                </group>
-            </search>
-        </field>
-    </record> -->
-
-
-    <!-- Estate Property Form View -->
-    <!-- <record id="estate_property_view_form" model="ir.ui.view">
-        <field name="name">estate.property.form</field>
-        <field name="model">estate.property</field>
-        <field name="arch" type="xml">
-            <form string="New Property">
-                <sheet>
-                    <h1><field name="name"/></h1>
-                    <group>
-                        <group>
-                            <field name="property_type_id"/>
-                            <field name="postcode"/>
-                            <field name="date_availability"/>
-                        </group>
-                        <group>
-                            <field name="expected_price"/>
-                            <field name="selling_price"/>
-                        </group>
-                    </group>
-                    <notebook>
-                        <page string="Description">
-                            <group>
-                                <field name="description"/>
-                                <field name="bedrooms"/>
-                                <field name="living_area"/>
-                                <field name="facades"/>
-                                <field name="garage"/>
-                                <field name="garden"/>
-                                <field name="garden_area"/>
-                                <field name="garden_orientation"/>
-                            </group>
-                        </page>
-                        <page string="Other Info">
-                            <group>
-                                <field name="buyer"/>
-                                <field name="salesperson"/>
-                            </group>
-                        </page>
-                    </notebook>
-                </sheet>
-            </form>
-        </field>
-    </record> -->
 </odoo>

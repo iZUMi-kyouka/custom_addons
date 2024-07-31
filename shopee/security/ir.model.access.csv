@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+shopee.access_shopee_order,access_shopee_order,shopee.model_shopee_order,base.group_user,1,1,1,1
+shopee.access_shopee_map,access_shopee_map,shopee.model_shopee_map,base.group_user,1,1,1,1
+shopee.access_shopee_import_wizard,access_shopee_import_wizard,shopee.model_shopee_import_wizard,base.group_user,1,1,1,1
